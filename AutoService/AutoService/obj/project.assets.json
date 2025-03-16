@@ -1613,11 +1613,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\AutoService.csproj",
+      "projectUniqueName": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\AutoService.csproj",
       "projectName": "AutoService",
-      "projectPath": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\AutoService.csproj",
+      "projectPath": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\AutoService.csproj",
       "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\obj\\",
+      "outputPath": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1645,8 +1645,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -1676,7 +1675,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

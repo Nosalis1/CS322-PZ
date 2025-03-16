@@ -12,6 +12,10 @@ namespace AutoService.Forms.Admin.Service
             serviceID = service.ID;
             InitializeComponent();
 
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
             nameInput.Text = service.Name;
             descriptionInput.Text = service.Description;
             durationInput.Text = service.Duration.ToString();
@@ -38,7 +42,7 @@ namespace AutoService.Forms.Admin.Service
                     Price = price
                 };
 
-                bool status = ServiceService.Update(serviceID, service);
+                bool status = ServiceService.Instance.Update(serviceID, service);
                 if (status)
                 {
                     MessageBox.Show("Servis uspešno ažuriran!");

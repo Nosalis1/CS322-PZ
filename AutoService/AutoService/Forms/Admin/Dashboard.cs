@@ -1,4 +1,8 @@
-﻿using AutoService.Models.Service;
+﻿using AutoService.Forms.Admin.Reservation;
+using AutoService.Models.Reservation;
+using AutoService.Models.Schedule;
+using AutoService.Models.Service;
+using AutoService.Models.User;
 using AutoService.Services;
 
 namespace AutoService.Forms.Admin
@@ -8,33 +12,55 @@ namespace AutoService.Forms.Admin
         public Dashboard()
         {
             InitializeComponent();
+            controlTabs.Selecting += ControlTabs_Selecting;
+            schedulesDataView.CellFormatting += schedulesDataView_CellFormatting;
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
-        private void UpdateDataSource()
+        private void ControlTabs_Selecting(object? sender, TabControlCancelEventArgs e) => UpdateAll();
+
+        private void Dashboard_Shown(object sender, EventArgs e) => UpdateAll();
+
+        private void UpdateAll()
         {
-            List<ServiceModel> services = ServiceService.RetrieveAll();
+            UpdateServicesDataSource();
+            UpdateSchedulesDataSource();
+            UpdateReservationsDataSource();
+            UpdateUsersDataSource();
+
+            nameLabel.Text = $"Ime : {UserService.User?.Name}";
+            emailLabel.Text = $"Email : {UserService.User?.Email}";
+            phoneLabel.Text = $"Kontakt Telefon : {UserService.User?.Phone}";
+        }
+
+        #region Services
+
+        private void UpdateServicesDataSource()
+        {
+            List<ServiceModel> services = ServiceService.Instance.RetrieveAll();
+            servicesDataView.DataSource = null;
             servicesDataView.DataSource = services;
 
-            servicesDataView.Columns["ID"].HeaderText = "Service ID";
-            servicesDataView.Columns["Name"].HeaderText = "Service Name";
-            servicesDataView.Columns["Description"].HeaderText = "Service Description";
-            servicesDataView.Columns["Duration"].HeaderText = "Duration (min)";
-            servicesDataView.Columns["Price"].HeaderText = "Price ($)";
+            {
+                servicesDataView.Columns["ID"].HeaderText = "Servis ID";
+                servicesDataView.Columns["Name"].HeaderText = "Ime";
+                servicesDataView.Columns["Description"].HeaderText = "Opis";
+                servicesDataView.Columns["Duration"].HeaderText = "Trajanje (min)";
+                servicesDataView.Columns["Price"].HeaderText = "Cena";
+            }
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            UpdateDataSource();
-        }
-
-        private void createButton_Click(object sender, EventArgs e)
+        private void serviceCreateButton_Click(object sender, EventArgs e)
         {
             Service.ServiceCreateForm popup = new Service.ServiceCreateForm();
             popup.ShowDialog();
-            UpdateDataSource();
+            UpdateServicesDataSource();
         }
 
-        private void updateButton_Click(object sender, EventArgs e)
+        private void serviceUpdateButton_Click(object sender, EventArgs e)
         {
             int selectedCount = servicesDataView.SelectedRows.Count;
             if (selectedCount > 0)
@@ -45,13 +71,13 @@ namespace AutoService.Forms.Admin
                 Service.ServiceUpdateForm popup = new Service.ServiceUpdateForm(selectedService);
                 popup.ShowDialog();
 
-                UpdateDataSource();
+                UpdateServicesDataSource();
                 return;
             }
             MessageBox.Show("Nije odabran nijedan servis za ažuriranje!");
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void serviceDeleteButton_Click(object sender, EventArgs e)
         {
             int selectedCount = servicesDataView.SelectedRows.Count;
             if (selectedCount > 0)
@@ -60,7 +86,7 @@ namespace AutoService.Forms.Admin
                 {
                     DataGridViewRow selectedRow = servicesDataView.SelectedRows[i];
                     ServiceModel selectedService = (ServiceModel)selectedRow.DataBoundItem;
-                    ServiceService.Delete(selectedService.ID);
+                    ServiceService.Instance.Delete(selectedService.ID);
                 }
 
                 if (selectedCount == 1)
@@ -68,12 +94,203 @@ namespace AutoService.Forms.Admin
                 else
                     MessageBox.Show("Odabrani servisi uspešno obrisani!");
 
-                UpdateDataSource();
+                UpdateServicesDataSource();
                 return;
             }
             MessageBox.Show("Nije odabran nijedan servis za brisanje!");
         }
 
-        private void refreshButton_Click(object sender, EventArgs e) => UpdateDataSource();
+        private void serviceRefreshButton_Click(object sender, EventArgs e) => UpdateServicesDataSource();
+
+        #endregion
+
+        #region Schedules
+
+        private void UpdateSchedulesDataSource()
+        {
+            List<ScheduleModel> schedules = ScheduleService.Instance.RetrieveAll();
+            schedulesDataView.DataSource = null;
+            schedulesDataView.DataSource = schedules;
+
+            {
+            schedulesDataView.Columns["ID"].HeaderText = "Termin ID";
+            schedulesDataView.Columns["ServiceName"].HeaderText = "Servis";
+            schedulesDataView.Columns["ServicePrice"].HeaderText = "Cena";
+            schedulesDataView.Columns["AvailableDate"].HeaderText = "Datum";
+            schedulesDataView.Columns["AvailableTime"].HeaderText = "Vreme";
+            schedulesDataView.Columns["Status"].HeaderText = "Status";
+
+            if (schedulesDataView.Columns["Service"] != null)
+                schedulesDataView.Columns.Remove("Service");
+            }
+        }
+
+        private void scheduleCreateButton_Click(object sender, EventArgs e)
+        {
+            Schedule.ScheduleCreateForm popup = new Schedule.ScheduleCreateForm();
+            popup.ShowDialog();
+            UpdateSchedulesDataSource();
+        }
+
+        private void scheduleUpdateButton_Click(object sender, EventArgs e)
+        {
+            int selectedCount = schedulesDataView.SelectedRows.Count;
+            if (selectedCount > 0)
+            {
+                DataGridViewRow selectedRow = schedulesDataView.SelectedRows[0];
+                ScheduleModel selectedSchedule = (ScheduleModel)selectedRow.DataBoundItem;
+
+                Schedule.ScheduleUpdateForm popup = new Schedule.ScheduleUpdateForm(selectedSchedule);
+                popup.ShowDialog();
+
+                UpdateSchedulesDataSource();
+                return;
+            }
+            MessageBox.Show("Nije odabran nijedan termin za ažuriranje!");
+        }
+
+        private void scheduleDeleteButton_Click(object sender, EventArgs e)
+        {
+            int selectedCount = schedulesDataView.SelectedRows.Count;
+            if (selectedCount > 0)
+            {
+                for (int i = 0; i < selectedCount; i++)
+                {
+                    DataGridViewRow selectedRow = schedulesDataView.SelectedRows[i];
+                    ScheduleModel selectedSchedule = (ScheduleModel)selectedRow.DataBoundItem;
+                    ScheduleService.Instance.Delete(selectedSchedule.ID);
+                }
+
+                if (selectedCount == 1)
+                    MessageBox.Show("Odabrani termin uspešno obrisan!");
+                else
+                    MessageBox.Show("Odabrani termini uspešno obrisani!");
+
+                UpdateSchedulesDataSource();
+                return;
+            }
+            MessageBox.Show("Nije odabran nijedan termin za brisanje!");
+        }
+
+        private void scheduleRefreshButton_Click(object sender, EventArgs e) => UpdateSchedulesDataSource();
+
+        #endregion
+
+        #region Reservations
+
+        private void UpdateReservationsDataSource()
+        {
+            List<ReservationModel> reservations = ReservationService.Instance.RetrieveAll();
+            reservationsDataView.DataSource = null;
+            reservationsDataView.DataSource = reservations;
+
+            reservationsDataView.Columns["ID"].HeaderText = "Rezervacija ID";
+            reservationsDataView.Columns["UserName"].HeaderText = "Korisnik";
+            reservationsDataView.Columns["Phone"].HeaderText = "Telefon";
+            reservationsDataView.Columns["ServiceName"].HeaderText = "Servis";
+            reservationsDataView.Columns["ServicePrice"].HeaderText = "Cena";
+            reservationsDataView.Columns["AvailableDate"].HeaderText = "Datum";
+            reservationsDataView.Columns["AvailableTime"].HeaderText = "Vreme";
+
+            if (reservationsDataView.Columns["User"] != null)
+                reservationsDataView.Columns.Remove("User");
+            if (reservationsDataView.Columns["Schedule"] != null)
+                reservationsDataView.Columns.Remove("Schedule");
+        }
+
+        private void reservationDeleteButton_Click(object sender, EventArgs e)
+        {
+            int selectedCount = reservationsDataView.SelectedRows.Count;
+            if (selectedCount > 0)
+            {
+                for (int i = 0; i < selectedCount; i++)
+                {
+                    DataGridViewRow selectedRow = reservationsDataView.SelectedRows[i];
+                    ReservationModel selectedReservation = (ReservationModel)selectedRow.DataBoundItem;
+                    ReservationService.Instance.Delete(selectedReservation.ID);
+                }
+
+                if (selectedCount == 1)
+                    MessageBox.Show("Odabrana rezervacija uspešno obrisana!");
+                else
+                    MessageBox.Show("Odabrane rezervacije uspešno obrisane!");
+
+                UpdateReservationsDataSource();
+                return;
+            }
+            MessageBox.Show("Nije odabrana nijedna rezervacija za brisanje!");
+        }
+
+        private void reservationRefreshButton_Click(object sender, EventArgs e) => UpdateReservationsDataSource();
+
+        #endregion
+
+        #region Users
+
+        private void UpdateUsersDataSource()
+        {
+            List<UserDTO> users = UserService.Instance.RetrieveAll();
+            usersDataView.DataSource = null;
+            usersDataView.DataSource = users;
+        }
+
+        private void usersRefreshButton_Click(object sender, EventArgs e) => UpdateUsersDataSource();
+
+        private void usersReservationsButton_Click(object sender, EventArgs e)
+        {
+            if (usersDataView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = usersDataView.SelectedRows[0];
+                object? item = row.DataBoundItem;
+                if (item != null)
+                {
+                    UserDTO? selected = item as UserDTO;
+                    if (selected != null)
+                    {
+                        ReservationUserPreviewForm popup = new ReservationUserPreviewForm(selected.ID);
+                        popup.ShowDialog();
+                    }
+                }
+            }
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            UserService.Instance.Logout();
+            this.Hide();
+
+            FormControl.LoginForm.Show();
+        }
+
+        #endregion
+
+        private void schedulesDataView_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (schedulesDataView.Columns[e.ColumnIndex].Name == "Status")
+            {
+                string? status = e.Value?.ToString();
+
+                if (!string.IsNullOrEmpty(status))
+                {
+                    DataGridViewRow row = schedulesDataView.Rows[e.RowIndex];
+
+                    switch (status)
+                    {
+                        case "Available":
+                            row.DefaultCellStyle.BackColor = Color.LightGreen;
+                            break;
+                        case "Reserved":
+                            row.DefaultCellStyle.BackColor = Color.LightCoral;
+                            break;
+                        case "In Progress":
+                            row.DefaultCellStyle.BackColor = Color.LightYellow;
+                            break;
+                        default:
+                            row.DefaultCellStyle.BackColor = Color.White;
+                            break;
+                    }
+                }
+            }
+        }
     }
 }

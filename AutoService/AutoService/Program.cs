@@ -14,7 +14,8 @@ namespace AutoService
             try
             {
                 Database.Database.InitializeDatabase();
-                Application.Run(new Form1());
+                Application.Run(FormControl.LoginForm);
+                FormControl.CloseAll();
                 Database.Database.Dispose();
             }
             catch (Database.DBException ex)

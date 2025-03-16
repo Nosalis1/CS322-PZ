@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\",
+  "WorkspaceRootPath": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\cs322domaci\\autoservice\\autoservice\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\fax\\cs-322\\cs322-pz\\autoservice\\autoservice\\forms\\user\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\forms\\user\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\fax\\cs-322\\cs322-pz\\autoservice\\autoservice\\forms\\admin\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\forms\\admin\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\fax\\cs-322\\cs322-pz\\autoservice\\autoservice\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\cs322domaci\\autoservice\\autoservice\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\fax\\cs-322\\cs322-pz\\autoservice\\autoservice\\services\\scheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\services\\scheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\fax\\cs-322\\cs322-pz\\autoservice\\autoservice\\forms\\admin\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\forms\\admin\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\fax\\cs-322\\cs322-pz\\autoservice\\autoservice\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\cs322domaci\\autoservice\\autoservice\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\cs322domaci\\autoservice\\autoservice\\models\\schedule\\scheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\models\\schedule\\scheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\cs322domaci\\autoservice\\autoservice\\models\\schedule\\schedulemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\models\\schedule\\schedulemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|c:\\users\\aleks\\desktop\\fax\\cs-322\\cs322-pz\\autoservice\\autoservice\\services\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2588012-A359-41DC-9EFE-2AA330724D88}|AutoService\\AutoService.csproj|solutionrelative:autoservice\\services\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,79 +37,101 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 97,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ServiceController.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Controllers\\ServiceController.cs",
-              "RelativeDocumentMoniker": "AutoService\\Controllers\\ServiceController.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Controllers\\ServiceController.cs",
-              "RelativeToolTip": "AutoService\\Controllers\\ServiceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Forms\\User\\Dashboard.cs",
+              "RelativeDocumentMoniker": "AutoService\\Forms\\User\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Forms\\User\\Dashboard.cs [Design]",
+              "RelativeToolTip": "AutoService\\Forms\\User\\Dashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T17:10:24.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-16T19:04:48.815Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Database.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Database\\Database.cs",
-              "RelativeDocumentMoniker": "AutoService\\Database\\Database.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Database\\Database.cs",
-              "RelativeToolTip": "AutoService\\Database\\Database.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBUAAAAyAAAAAAAAAA==",
+              "Title": "ScheduleController.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Controllers\\ScheduleController.cs",
+              "RelativeDocumentMoniker": "AutoService\\Controllers\\ScheduleController.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Controllers\\ScheduleController.cs",
+              "RelativeToolTip": "AutoService\\Controllers\\ScheduleController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAALQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T17:03:28.822Z",
+              "WhenOpened": "2025-03-16T19:01:07.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ScheduleDTO.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Models\\Schedule\\ScheduleDTO.cs",
-              "RelativeDocumentMoniker": "AutoService\\Models\\Schedule\\ScheduleDTO.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Models\\Schedule\\ScheduleDTO.cs",
-              "RelativeToolTip": "AutoService\\Models\\Schedule\\ScheduleDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "ScheduleService.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Services\\ScheduleService.cs",
+              "RelativeDocumentMoniker": "AutoService\\Services\\ScheduleService.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Services\\ScheduleService.cs",
+              "RelativeToolTip": "AutoService\\Services\\ScheduleService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T16:58:40.225Z",
+              "WhenOpened": "2025-03-16T19:00:29.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceController.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Controllers\\ServiceController.cs",
+              "RelativeDocumentMoniker": "AutoService\\Controllers\\ServiceController.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Controllers\\ServiceController.cs",
+              "RelativeToolTip": "AutoService\\Controllers\\ServiceController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAIsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T18:54:58.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ServiceService.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Services\\ServiceService.cs",
+              "RelativeDocumentMoniker": "AutoService\\Services\\ServiceService.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Services\\ServiceService.cs",
+              "RelativeToolTip": "AutoService\\Services\\ServiceService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T18:54:00.923Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ScheduleModel.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Models\\Schedule\\ScheduleModel.cs",
-              "RelativeDocumentMoniker": "AutoService\\Models\\Schedule\\ScheduleModel.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Models\\Schedule\\ScheduleModel.cs",
-              "RelativeToolTip": "AutoService\\Models\\Schedule\\ScheduleModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Dashboard.cs",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Forms\\Admin\\Dashboard.cs",
+              "RelativeDocumentMoniker": "AutoService\\Forms\\Admin\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Forms\\Admin\\Dashboard.cs",
+              "RelativeToolTip": "AutoService\\Forms\\Admin\\Dashboard.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwLEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T16:58:38.5Z",
+              "WhenOpened": "2025-03-16T18:50:18.338Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 97,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ScheduleController.cs",
-              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Controllers\\ScheduleController.cs",
-              "RelativeDocumentMoniker": "AutoService\\Controllers\\ScheduleController.cs",
-              "ToolTip": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\Controllers\\ScheduleController.cs*",
-              "RelativeToolTip": "AutoService\\Controllers\\ScheduleController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Forms\\Admin\\Dashboard.cs",
+              "RelativeDocumentMoniker": "AutoService\\Forms\\Admin\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\Forms\\Admin\\Dashboard.cs [Design]",
+              "RelativeToolTip": "AutoService\\Forms\\Admin\\Dashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T16:58:32.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-16T18:50:16.096Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

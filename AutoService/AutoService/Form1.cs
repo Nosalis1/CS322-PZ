@@ -2,7 +2,7 @@ using AutoService.Forms;
 
 namespace AutoService
 {
-    public partial class Form1 : Form
+    public partial class FormControl
     {
         public static Form LoginForm = new LoginForm();
         public static Form RegistrationForm = new RegistrationForm();
@@ -10,15 +10,13 @@ namespace AutoService
         public static Form AdminDashboardForm = new Forms.Admin.Dashboard();
         public static Form UserDashboardForm = new Forms.User.Dashboard();
 
-        public Form1()
+        public static void CloseAll()
         {
-            InitializeComponent();
-        }
+            UserDashboardForm.Close();
+            AdminDashboardForm.Close();
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            this.Hide(); // This not working ?? 
-            LoginForm.Show();
+            RegistrationForm.Close();
+            LoginForm.Close();
         }
     }
 }

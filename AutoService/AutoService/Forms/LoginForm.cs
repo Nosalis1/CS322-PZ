@@ -1,14 +1,5 @@
 ﻿using AutoService.Models.User;
 using AutoService.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AutoService.Forms
 {
@@ -17,12 +8,25 @@ namespace AutoService.Forms
         public LoginForm()
         {
             InitializeComponent();
+            this.VisibleChanged += OnVisibleChanged;
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+        }
+
+        private void OnVisibleChanged(object? sender, EventArgs e)
+        {
+            if (!this.Visible) return;
+            this.usernameInput.Clear();
+            this.passwordInput.Clear();
         }
 
         private void registrationLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form1.LoginForm.Hide();
-            Form1.RegistrationForm.Show();
+            FormControl.LoginForm.Hide();
+            FormControl.RegistrationForm.Location = FormControl.LoginForm.Location;
+            FormControl.RegistrationForm.Show();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -36,18 +40,18 @@ namespace AutoService.Forms
                 Password = password
             };
 
-            bool status = UserService.Login(credentials);
+            bool status = UserService.Instance.Login(credentials);
             if (status)
             {
-                Form1.LoginForm.Hide();
+                FormControl.LoginForm.Hide();
 
                 if (UserService.IsAdmin)
                 {
-                    Form1.AdminDashboardForm.Show();
+                    FormControl.AdminDashboardForm.Show();
                     return;
                 }
 
-                Form1.UserDashboardForm.Show();
+                FormControl.UserDashboardForm.Show();
                 return;
             }
 

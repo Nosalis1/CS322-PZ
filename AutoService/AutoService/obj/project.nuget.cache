@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d5KJqwWrUZs=",
+  "dgSpecHash": "u7vv9vQr1n0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\aleks\\Desktop\\cs322Domaci\\AutoService\\AutoService\\AutoService.csproj",
+  "projectFilePath": "C:\\Users\\aleks\\Desktop\\Fax\\CS-322\\CS322-PZ\\AutoService\\AutoService\\AutoService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aleks\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",

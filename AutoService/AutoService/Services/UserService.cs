@@ -1,22 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using AutoService.Models.User;
+﻿using AutoService.Models.User;
 using AutoService.Controllers;
+using AutoService.Attributes;
 
 namespace AutoService.Services
 {
-    internal static class UserService
+    public interface IUserService
     {
-        public static UserModel? User { get; private set; } = null;
+        [AuthRequired, AdminOnly] UserDTO? Retrieve(int userID);
+        [AuthRequired, AdminOnly] List<UserDTO> RetrieveAll();
+        [AuthRequired, SelfOnly(idKey: "userID")] bool Update(int userID, UserDTO? userDto);
+        bool Login(CredentialsDTO? credentials);
+        [AuthRequired] void Logout();
+        bool Register(CredentialsDTO? credentials);
+    }
 
+    public class UserService : IUserService
+    {
+        public static IUserService Instance = AuthProxy<IUserService>.Create(new UserService());
+
+        public static UserModel? User { get; private set; } = null;
         public static bool IsAuthenticated => User != null;
         public static bool IsAdmin => IsAuthenticated && User?.Rola != null && User.Rola.Equals("Admin");
 
-        public static bool Login(CredentialsDTO? credentials)
+        public UserDTO? Retrieve(int userID) => UserController.Retrieve(userID);
+        public List<UserDTO> RetrieveAll() => UserController.RetrieveAll();
+        public bool Update(int userID, UserDTO? userDto)
+        {
+            if (userDto == null) return false;
+            bool status = UserController.UpdateUser(userID, userDto);
+            if (status && User != null)
+            {
+                User.Name = userDto.Name;
+                User.Email = userDto.Email;
+                User.Phone = userDto.Phone;
+            }
+            return status;
+        }
+        public bool Login(CredentialsDTO? credentials)
         {
             if (credentials == null) return false;
 
@@ -31,7 +51,7 @@ namespace AutoService.Services
                 return false;
             }
 
-            User = new UserModel
+            UserService.User = new UserModel
             {
                 ID = data.ID,
                 Name = data.Name,
@@ -40,12 +60,11 @@ namespace AutoService.Services
                 Phone = data.Phone,
                 Rola = data.Rola
             };
+
             return true;
         }
-
-        public static void Logout() => User = null;
-
-        public static bool Register(CredentialsDTO? credentials)
+        public void Logout() => User = null;
+        public bool Register(CredentialsDTO? credentials)
         {
             if (credentials == null) return false;
 

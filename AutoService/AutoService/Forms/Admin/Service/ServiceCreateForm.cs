@@ -8,6 +8,9 @@ namespace AutoService.Forms.Admin.Service
         public ServiceCreateForm()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -30,7 +33,7 @@ namespace AutoService.Forms.Admin.Service
                     Price = price
                 };
 
-                bool status = ServiceService.Create(service);
+                bool status = ServiceService.Instance.Create(service);
                 if (status)
                 {
                     MessageBox.Show("Servis uspešno kreiran!");

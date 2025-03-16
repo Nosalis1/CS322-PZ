@@ -1,6 +1,6 @@
 ﻿namespace AutoService.Models.Service
 {
-    internal class ServiceDTO
+    public class ServiceDTO
     {
         public string? Name { get; set; }
         public string? Description { get; set; }

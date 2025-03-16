@@ -38,41 +38,52 @@
             emailInput = new TextBox();
             phoneLabel = new Label();
             phoneInput = new TextBox();
+            registrationGroup = new GroupBox();
+            registrationGroup.SuspendLayout();
             SuspendLayout();
             // 
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
-            usernameLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            usernameLabel.Location = new Point(175, 135);
+            usernameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            usernameLabel.ForeColor = Color.FromArgb(250, 251, 252);
+            usernameLabel.Location = new Point(43, 53);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(116, 20);
+            usernameLabel.Size = new Size(103, 17);
             usernameLabel.TabIndex = 0;
             usernameLabel.Text = "Korisničko ime:";
             // 
             // usernameInput
             // 
-            usernameInput.Location = new Point(297, 132);
+            usernameInput.BackColor = Color.FromArgb(43, 49, 55);
+            usernameInput.ForeColor = Color.FromArgb(250, 251, 252);
+            usernameInput.Location = new Point(153, 50);
+            usernameInput.Margin = new Padding(3, 2, 3, 2);
             usernameInput.Name = "usernameInput";
-            usernameInput.Size = new Size(234, 27);
+            usernameInput.Size = new Size(205, 35);
             usernameInput.TabIndex = 1;
             // 
             // passwordInput
             // 
-            passwordInput.Location = new Point(297, 168);
+            passwordInput.BackColor = Color.FromArgb(43, 49, 55);
+            passwordInput.ForeColor = Color.FromArgb(250, 251, 252);
+            passwordInput.Location = new Point(153, 90);
+            passwordInput.Margin = new Padding(3, 2, 3, 2);
             passwordInput.Name = "passwordInput";
             passwordInput.PasswordChar = '*';
-            passwordInput.Size = new Size(234, 27);
+            passwordInput.Size = new Size(205, 35);
             passwordInput.TabIndex = 2;
             passwordInput.UseSystemPasswordChar = true;
             // 
             // loginButton
             // 
-            loginButton.BackColor = Color.CornflowerBlue;
-            loginButton.ForeColor = Color.White;
-            loginButton.Location = new Point(297, 267);
+            loginButton.BackColor = Color.FromArgb(45, 186, 78);
+            loginButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            loginButton.ForeColor = Color.FromArgb(36, 41, 46);
+            loginButton.Location = new Point(176, 218);
+            loginButton.Margin = new Padding(3, 2, 3, 2);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(127, 43);
+            loginButton.Size = new Size(158, 32);
             loginButton.TabIndex = 3;
             loginButton.Text = "Registrujte se";
             loginButton.UseVisualStyleBackColor = false;
@@ -81,77 +92,104 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            passwordLabel.Location = new Point(175, 171);
+            passwordLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            passwordLabel.ForeColor = Color.FromArgb(250, 251, 252);
+            passwordLabel.Location = new Point(83, 93);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(66, 20);
+            passwordLabel.Size = new Size(59, 17);
             passwordLabel.TabIndex = 4;
             passwordLabel.Text = "Lozinka:";
             // 
             // registrationLabel
             // 
+            registrationLabel.ActiveLinkColor = Color.FromArgb(250, 251, 252);
             registrationLabel.AutoSize = true;
-            registrationLabel.Location = new Point(297, 326);
+            registrationLabel.LinkColor = Color.FromArgb(45, 186, 78);
+            registrationLabel.Location = new Point(53, 267);
             registrationLabel.Name = "registrationLabel";
-            registrationLabel.Size = new Size(200, 20);
+            registrationLabel.Size = new Size(294, 30);
             registrationLabel.TabIndex = 5;
             registrationLabel.TabStop = true;
             registrationLabel.Text = "Već imate profil? Ulogujte se";
+            registrationLabel.TextAlign = ContentAlignment.MiddleCenter;
             registrationLabel.LinkClicked += registrationLabel_LinkClicked;
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            emailLabel.Location = new Point(175, 204);
+            emailLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            emailLabel.ForeColor = Color.FromArgb(250, 251, 252);
+            emailLabel.Location = new Point(96, 133);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(51, 20);
+            emailLabel.Size = new Size(46, 17);
             emailLabel.TabIndex = 7;
             emailLabel.Text = "Email:";
             // 
             // emailInput
             // 
-            emailInput.Location = new Point(297, 201);
+            emailInput.BackColor = Color.FromArgb(43, 49, 55);
+            emailInput.ForeColor = Color.FromArgb(250, 251, 252);
+            emailInput.Location = new Point(153, 130);
+            emailInput.Margin = new Padding(3, 2, 3, 2);
             emailInput.Name = "emailInput";
-            emailInput.Size = new Size(234, 27);
+            emailInput.Size = new Size(205, 35);
             emailInput.TabIndex = 6;
             // 
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            phoneLabel.Location = new Point(175, 237);
+            phoneLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            phoneLabel.ForeColor = Color.FromArgb(250, 251, 252);
+            phoneLabel.Location = new Point(83, 173);
             phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new Size(65, 20);
+            phoneLabel.Size = new Size(58, 17);
             phoneLabel.TabIndex = 9;
             phoneLabel.Text = "Telefon:";
             // 
             // phoneInput
             // 
-            phoneInput.Location = new Point(297, 234);
+            phoneInput.BackColor = Color.FromArgb(43, 49, 55);
+            phoneInput.ForeColor = Color.FromArgb(250, 251, 252);
+            phoneInput.Location = new Point(153, 170);
+            phoneInput.Margin = new Padding(3, 2, 3, 2);
             phoneInput.Name = "phoneInput";
-            phoneInput.Size = new Size(234, 27);
+            phoneInput.Size = new Size(205, 35);
             phoneInput.TabIndex = 8;
+            // 
+            // registrationGroup
+            // 
+            registrationGroup.Controls.Add(usernameInput);
+            registrationGroup.Controls.Add(phoneLabel);
+            registrationGroup.Controls.Add(usernameLabel);
+            registrationGroup.Controls.Add(phoneInput);
+            registrationGroup.Controls.Add(passwordInput);
+            registrationGroup.Controls.Add(emailLabel);
+            registrationGroup.Controls.Add(loginButton);
+            registrationGroup.Controls.Add(emailInput);
+            registrationGroup.Controls.Add(passwordLabel);
+            registrationGroup.Controls.Add(registrationLabel);
+            registrationGroup.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            registrationGroup.ForeColor = Color.FromArgb(250, 251, 252);
+            registrationGroup.Location = new Point(192, 130);
+            registrationGroup.Name = "registrationGroup";
+            registrationGroup.Size = new Size(400, 300);
+            registrationGroup.TabIndex = 10;
+            registrationGroup.TabStop = false;
+            registrationGroup.Text = "Registracija";
             // 
             // RegistrationForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(phoneLabel);
-            Controls.Add(phoneInput);
-            Controls.Add(emailLabel);
-            Controls.Add(emailInput);
-            Controls.Add(registrationLabel);
-            Controls.Add(passwordLabel);
-            Controls.Add(loginButton);
-            Controls.Add(passwordInput);
-            Controls.Add(usernameInput);
-            Controls.Add(usernameLabel);
+            BackColor = Color.FromArgb(36, 41, 46);
+            ClientSize = new Size(784, 561);
+            Controls.Add(registrationGroup);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "RegistrationForm";
-            Text = "RegistrationForm";
+            Text = "Registracija";
+            registrationGroup.ResumeLayout(false);
+            registrationGroup.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -166,5 +204,6 @@
         private TextBox emailInput;
         private Label phoneLabel;
         private TextBox phoneInput;
+        private GroupBox registrationGroup;
     }
 }

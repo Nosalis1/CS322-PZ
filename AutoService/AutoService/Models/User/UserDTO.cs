@@ -1,7 +1,6 @@
-﻿
-namespace AutoService.Models.User
+﻿namespace AutoService.Models.User
 {
-    internal class UserDTO
+    public class UserDTO
     {
         public int ID { get; set; } = -1;
         public string? Name { get; set; }

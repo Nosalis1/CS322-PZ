@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoService.Models.Schedule
+﻿namespace AutoService.Models.Schedule
 {
-    internal class ScheduleModel
+    public class ScheduleModel
     {
+        public int ID { get; set; }
+        public Service.ServiceModel? Service { get; set; }
+        public string ServiceName => Service?.Name ?? "N/A";
+        public double ServicePrice => Service?.Price ?? 0.0;
+        public DateTime AvailableDate { get; set; }
+        public TimeSpan AvailableTime { get; set; }
+        public string? Status { get; set; }
     }
 }

@@ -1,14 +1,5 @@
 ﻿using AutoService.Models.User;
 using AutoService.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AutoService.Forms
 {
@@ -17,12 +8,27 @@ namespace AutoService.Forms
         public RegistrationForm()
         {
             InitializeComponent();
+            this.VisibleChanged += OnVisibleChanged;
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+        }
+
+        private void OnVisibleChanged(object? sender, EventArgs e)
+        {
+            if (!this.Visible) return;
+            usernameInput.Clear();
+            passwordInput.Clear();
+            emailInput.Clear();
+            phoneInput.Clear();
         }
 
         private void registrationLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form1.RegistrationForm.Hide();
-            Form1.LoginForm.Show();
+            FormControl.RegistrationForm.Hide();
+            FormControl.LoginForm.Location = FormControl.RegistrationForm.Location;
+            FormControl.LoginForm.Show();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -40,12 +46,12 @@ namespace AutoService.Forms
                 Phone = phone,
             };
 
-            bool status = UserService.Register(credentials);
+            bool status = UserService.Instance.Register(credentials);
             if (status)
             {
                 MessageBox.Show("Uspešno ste kreirali nalog!");
-                Form1.RegistrationForm.Hide();
-                Form1.LoginForm.Show();
+                FormControl.RegistrationForm.Hide();
+                FormControl.LoginForm.Show();
                 return;
             }
 

@@ -1,7 +1,6 @@
-﻿
-namespace AutoService.Models.User
+﻿namespace AutoService.Models.User
 {
-    internal class CredentialsDTO
+    public class CredentialsDTO
     {
         public string? Username { get; set; }
         public string? Password { get; set; }

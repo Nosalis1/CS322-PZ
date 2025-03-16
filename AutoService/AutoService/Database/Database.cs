@@ -7,7 +7,7 @@ namespace AutoService.Database
         private static MySqlConnection? connection;
         public static MySqlConnection Connection => connection;
 
-        const string CONNECTION_STRING = "Server=localhost;Database=auto_service;Uid=admin;Pwd=admin";
+        const string CONNECTION_STRING = "Server=localhost;Database=auto_service;Uid=root;Pwd=";
         const string TABLE_QUERY = @"
             CREATE TABLE IF NOT EXISTS Korisnici (
                 ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,6 +35,18 @@ namespace AutoService.Database
                 CONSTRAINT FK_ServisTermin FOREIGN KEY (ServisID)
                     REFERENCES Servisi(ID) ON DELETE CASCADE,
                 INDEX Servis_Index (ServisID)
+            );
+
+            CREATE TABLE IF NOT EXISTS Rezervacije (
+                ID INT AUTO_INCREMENT PRIMARY KEY,
+                TerminID INT NOT NULL,
+                KorisnikID INT NOT NULL,
+                CONSTRAINT FK_TerminRezervacija FOREIGN KEY (TerminID)
+                    REFERENCES Termini(ID) ON DELETE CASCADE,
+                INDEX Termin_Index (TerminID),
+                CONSTRAINT FK_KorisnikRezervacija FOREIGN KEY (KorisnikID)
+                    REFERENCES Korisnici(ID) ON DELETE CASCADE,
+                INDEX Korisnik_Index (KorisnikID)
             );
         ";
 

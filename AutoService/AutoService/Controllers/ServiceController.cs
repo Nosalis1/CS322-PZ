@@ -44,6 +44,7 @@ namespace AutoService.Controllers
         public static ServiceModel? RetrieveService(int? serviceID)
         {
             if (serviceID == null) return null;
+
             using (var command = new MySqlCommand(QUERY_RETRIEVE, Connection))
             {
                 command.Parameters.AddWithValue("@ID", serviceID);

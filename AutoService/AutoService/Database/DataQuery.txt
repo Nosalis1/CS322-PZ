@@ -1,0 +1,48 @@
+﻿-- Ubacivanje korisnika
+INSERT INTO Korisnici (Ime, Lozinka, Email, Telefon, Rola) VALUES
+('Marko Petrović', 'lozinka123', 'marko@example.com', '0611234567', 'Admin'),
+('Jovana Milić', 'sigurnalozinka', 'jovana@example.com', '0622345678', 'User'),
+('Nikola Jović', 'testlozinka', 'nikola@example.com', '0633456789', 'User'),
+('Ana Kovačević', 'sifra123', 'ana@example.com', '0644567890', 'Admin'),
+('Ivan Ilić', 'tajnalozinka', 'ivan@example.com', '0655678901', 'User'),
+('Maja Stanković', 'maja2024', 'maja@example.com', '0666789012', 'User'),
+('Stefan Mitrović', 'qwerty', 'stefan@example.com', '0677890123', 'User'),
+('Tamara Ristić', '123456', 'tamara@example.com', '0688901234', 'User');
+
+-- Ubacivanje servisa
+INSERT INTO Servisi (Ime, Opis, Trajanje, Cena) VALUES
+('Zamena ulja', 'Kompletna zamena motornog ulja i filtera', 45, 4500.00),
+('Zamena guma', 'Montaža i balansiranje svih guma', 60, 3500.00),
+('Balansiranje točkova', 'Precizno balansiranje sva četiri točka', 30, 2000.00),
+('Podešavanje trapa', 'Geometrija i centriranje trapa vozila', 90, 6000.00),
+('Mali servis', 'Zamena ulja, filtera i pregled vitalnih delova', 75, 7500.00),
+('Veliki servis', 'Zamena seta zupčastog kaiša i svih filtera', 180, 25000.00),
+('Zamena kočionih pločica', 'Zamena svih kočionih pločica', 50, 5500.00),
+('Zamena akumulatora', 'Provera i zamena akumulatora', 20, 3000.00),
+('Dijagnostika motora', 'Kompletna elektronska dijagnostika', 40, 4000.00);
+
+-- Ubacivanje termina (Dostupni, U toku i Rezervisani)
+INSERT INTO Termini (ServisID, DostupanDatum, DostupnoVreme, Status) VALUES
+(1, '2025-03-20', '08:00:00', 'Available'),
+(2, '2025-03-20', '10:00:00', 'Reserved'),
+(3, '2025-03-20', '12:00:00', 'Available'),
+(4, '2025-03-21', '09:00:00', 'In Progress'),
+(5, '2025-03-21', '11:00:00', 'Available'),
+(6, '2025-03-21', '14:00:00', 'Reserved'),
+(7, '2025-03-22', '08:30:00', 'Available'),
+(8, '2025-03-22', '10:30:00', 'In Progress'),
+(9, '2025-03-22', '13:00:00', 'Reserved'),
+(1, '2025-03-23', '09:00:00', 'Available'),
+(2, '2025-03-23', '11:30:00', 'Reserved'),
+(3, '2025-03-23', '14:00:00', 'In Progress'),
+(4, '2025-03-24', '08:00:00', 'Available'),
+(5, '2025-03-24', '10:00:00', 'Reserved'),
+(6, '2025-03-24', '12:30:00', 'Available');
+
+-- Ubacivanje rezervacija (spajanje korisnika sa terminima)
+INSERT INTO Rezervacije (TerminID, KorisnikID) VALUES
+(2, 2), -- Jovana Milić rezervisala Zamenu guma
+(6, 5), -- Ivan Ilić rezervisao Veliki servis
+(9, 7), -- Stefan Mitrović rezervisao Dijagnostiku motora
+(12, 3), -- Nikola Jović rezervisao Balansiranje točkova
+(15, 6); -- Maja Stanković rezervisala Mali servis
